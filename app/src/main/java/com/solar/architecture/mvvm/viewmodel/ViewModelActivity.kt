@@ -1,8 +1,7 @@
-package com.solar.architecture.viewmodel
+package com.solar.architecture.mvvm.viewmodel
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.ViewModelProvider
 
 class ViewModelActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

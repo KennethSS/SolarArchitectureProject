@@ -5,7 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import com.solar.architecture.dagger.Dagger2Application
 import com.solar.architecture.dagger.component.DaggerActivityComponent
-import com.solar.architecture.viewmodel.BasicViewModel
+import com.solar.architecture.mvvm.viewmodel.BasicViewModel
 import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
 

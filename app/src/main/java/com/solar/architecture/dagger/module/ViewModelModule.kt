@@ -1,8 +1,7 @@
 package com.solar.architecture.dagger.module
 
 import androidx.lifecycle.ViewModel
-import com.solar.architecture.viewmodel.BasicViewModel
-import com.solar.data.repository.FoodRemote
+import com.solar.architecture.mvvm.viewmodel.BasicViewModel
 import com.solar.domain.repository.FoodRepository
 import dagger.Module
 import dagger.Provides

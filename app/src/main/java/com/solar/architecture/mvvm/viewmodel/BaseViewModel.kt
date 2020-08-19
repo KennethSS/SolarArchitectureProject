@@ -1,4 +1,4 @@
-package com.solar.architecture.viewmodel
+package com.solar.architecture.mvvm.viewmodel
 
 import androidx.lifecycle.ViewModel
 
