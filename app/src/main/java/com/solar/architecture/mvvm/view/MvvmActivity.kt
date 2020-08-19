@@ -1,18 +1,21 @@
-package com.solar.architecture
+package com.solar.architecture.mvvm.view
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
+import com.solar.architecture.R
 import com.solar.architecture.dagger.Dagger2Application
 import com.solar.architecture.dagger.component.DaggerActivityComponent
-import com.solar.architecture.mvvm.view.MvvmActivity
+import com.solar.architecture.databinding.ActivityMvvmBinding
 import com.solar.architecture.mvvm.viewmodel.BasicViewModel
-import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
 
-class MainActivity : AppCompatActivity() {
+class MvvmActivity : AppCompatActivity() {
+
     @Inject lateinit var viewModel: BasicViewModel
+
+    lateinit var bind: ActivityMvvmBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         val component = DaggerActivityComponent.builder()
@@ -21,16 +24,11 @@ class MainActivity : AppCompatActivity() {
 
         component.inject(this)
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-
-
+        bind = DataBindingUtil.setContentView(this, R.layout.activity_mvvm)
         viewModel.title.observe(this, Observer {
-            hello_world.text = it
-        })
-        viewModel.getSample()
 
-        hello_world.setOnClickListener {
-            startActivity(Intent(this, MvvmActivity::class.java))
-        }
+            bind.text = it
+        })
+        viewModel.getSampleText()
     }
 }

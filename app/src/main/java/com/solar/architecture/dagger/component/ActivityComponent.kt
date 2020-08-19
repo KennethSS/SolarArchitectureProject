@@ -5,6 +5,7 @@ import com.solar.architecture.dagger.module.ActivityModule
 import com.solar.architecture.dagger.module.DomainModule
 import com.solar.architecture.dagger.module.RemoteModule
 import com.solar.architecture.dagger.scope.ActivityScope
+import com.solar.architecture.mvvm.view.MvvmActivity
 import dagger.Component
 
 @ActivityScope
@@ -20,4 +21,5 @@ import dagger.Component
 )
 interface ActivityComponent {
     fun inject(mainActivity: MainActivity)
+    fun inject(mvvmActivity: MvvmActivity)
 }
