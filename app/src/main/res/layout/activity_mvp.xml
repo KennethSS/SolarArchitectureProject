@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+        <import type="java.util.List"/>
+        <import type="com.solar.domain.model.Food"/>
 
+        <variable name="food_list" type="List&lt;Food>" />
     </data>
 
     <LinearLayout
@@ -24,5 +28,13 @@
             app:layout_constraintTop_toTopOf="parent">
         </androidx.viewpager.widget.ViewPager>
 
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/mvp_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            app:food_list="@{food_list}"
+            tools:listitem="@layout/recyclerview_item_youtube"/>
     </LinearLayout>
 </layout>
