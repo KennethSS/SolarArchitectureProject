@@ -1,15 +1,14 @@
 package com.solar.architecture.mvp.contract
 
-import com.solar.architecture.mvp.presenter.BasePresenter
-import com.solar.architecture.mvp.view.BaseView
-
 interface FoodContract {
     interface View: BaseView<Presenter> {
         fun initViewPager()
+        fun loadMessage(str: String)
     }
 
     interface Presenter: BasePresenter {
         fun initDatabase()
-
+        fun loadSampleMessage()
+        fun attach(view: View)
     }
 }

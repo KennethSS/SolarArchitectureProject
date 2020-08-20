@@ -25,8 +25,8 @@ class MvvmActivity : AppCompatActivity() {
         component.inject(this)
         super.onCreate(savedInstanceState)
         bind = DataBindingUtil.setContentView(this, R.layout.activity_mvvm)
-        viewModel.title.observe(this, Observer {
 
+        viewModel.title.observe(this, Observer {
             bind.text = it
         })
         viewModel.getSample()

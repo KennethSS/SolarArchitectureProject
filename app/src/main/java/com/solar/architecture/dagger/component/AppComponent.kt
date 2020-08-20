@@ -13,6 +13,7 @@ import javax.inject.Singleton
         AppModule::class,
         ViewModelModule::class,
         ViewModelFactoryModule::class,
+        PresenterModule::class,
         RemoteModule::class,
         DomainModule::class
         ]

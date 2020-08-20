@@ -9,6 +9,7 @@ import dagger.multibindings.IntoMap
 
 @Module
 class ViewModelModule {
+
     @Provides
     @IntoMap
     @ViewModelKey(BasicViewModel::class)
