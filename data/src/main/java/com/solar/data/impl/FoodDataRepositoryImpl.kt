@@ -12,6 +12,7 @@ class FoodDataRepositoryImpl(
     private val foodMapper: FoodMapper
 ) : FoodRepository {
     override fun getFeedList(): Single<List<Food>> {
+
         return foodRemote.getFoodList().map { list -> list.map { foodMapper.mapFromEntity(it) } }
     }
 

@@ -17,11 +17,13 @@ class FoodRemoteImpl(
     private val feedEntityMapper: FoodEntityMapper
 ) : FoodRemote {
     override fun getFoodList(): Single<List<FoodEntity>> {
-        return Single.just(listOf(FoodEntity("sdf", 0, listOf())))
-        /*return foodService.getFeedList()
+        print("getFoodList")
+        //return Single.just(listOf(FoodEntity("sdf", 0, listOf())))
+        return foodService.getFeedList()
             .map { list ->
+                print("getFoodList" + list.size)
                 list.map { feedEntityMapper.mapFromRemote(it) }
-            }*/
+            }
     }
 
     override fun postFood(food: FoodEntity): Observable<Any> {

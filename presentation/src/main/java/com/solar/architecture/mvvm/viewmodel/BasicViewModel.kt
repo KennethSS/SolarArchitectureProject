@@ -1,5 +1,6 @@
 package com.solar.architecture.mvvm.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -10,7 +11,7 @@ import io.reactivex.schedulers.Schedulers
 
 class BasicViewModel(
     private val foodRepository: FoodRepository
-) : ViewModel() {
+) : BaseViewModel() {
 
     private val _title: MutableLiveData<String> by lazy { MutableLiveData<String>() }
     val title: LiveData<String> = _title
@@ -21,15 +22,16 @@ class BasicViewModel(
 
     fun getSample() {
         //_title.postValue("kwe")
-        foodRepository.getFeedList()
+        disposable += foodRepository.getFeedList()
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(
                 {
+                    Log.d("BasicViewModel","listsize" + it.size)
                     _title.postValue(it.first().name)
                 },
                 {
-
+                    Log.d("BasicViewModel",it.message)
                 }
             )
 

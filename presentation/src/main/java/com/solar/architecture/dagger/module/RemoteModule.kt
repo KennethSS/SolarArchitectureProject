@@ -13,13 +13,9 @@ import dagger.Provides
 @Module
 class RemoteModule {
 
-    companion object {
-
-    }
-
     @Provides
     fun provideFoodService(): FoodService {
-        return ApiClient.provideAppService<FoodService>(BuildConfig.DEBUG)
+        return ApiClient.provideAppService(BuildConfig.DEBUG)
     }
 
     @Provides

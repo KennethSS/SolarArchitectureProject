@@ -29,6 +29,6 @@ class MvvmActivity : AppCompatActivity() {
 
             bind.text = it
         })
-        viewModel.getSampleText()
+        viewModel.getSample()
     }
 }
