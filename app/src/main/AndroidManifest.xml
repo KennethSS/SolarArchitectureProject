@@ -26,6 +26,7 @@
 
         <activity android:name=".mvvm.view.MvvmActivity"/>
         <activity android:name=".mvp.view.MvpActivity"/>
+        <activity android:name=".db.room.RoomActivity"/>
     </application>
 
 </manifest>

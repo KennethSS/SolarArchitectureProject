@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import com.solar.architecture.dagger.Dagger2Application
 import com.solar.architecture.dagger.component.DaggerActivityComponent
+import com.solar.architecture.db.room.RoomActivity
 import com.solar.architecture.mvp.view.MvpActivity
 import com.solar.architecture.mvvm.view.MvvmActivity
 import com.solar.architecture.mvvm.viewmodel.BasicViewModel
@@ -19,5 +20,6 @@ class MainActivity : AppCompatActivity() {
 
         mvvm.setOnClickListener { startActivity(Intent(this, MvvmActivity::class.java)) }
         mvp.setOnClickListener { startActivity(Intent(this, MvpActivity::class.java)) }
+        room.setOnClickListener { startActivity(Intent(this, RoomActivity::class.java)) }
     }
 }
